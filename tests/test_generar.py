@@ -13,7 +13,7 @@ def test_base_sin_datos_de_la_tienda_de_origen():
     base = g.leer_base()
     assert len(base) == 142 and len({p["codigo"] for p in base}) == 142
     assert sum(1 for p in base if p["designacion_icha"]) == 78
-    assert "sodimac" not in g.BASE.read_text(encoding="utf-8").lower()
+    assert "http" not in g.BASE.read_text(encoding="utf-8")  # sin URL de la tienda de origen
     assert list(base[0]) == ["codigo", "nombre", "tipo", "dimensiones", "espesor_mm", "largo_m", "proceso",
                              "precio_base_clp", "designacion_icha"]
 

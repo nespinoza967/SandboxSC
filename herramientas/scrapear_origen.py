@@ -25,8 +25,10 @@ from pathlib import Path
 
 import requests
 
-BASE = "https://www.sodimac.cl"
-BUSQUEDA = BASE + "/sodimac-cl/buscar?Ntt={q}&page={p}"
+# URL de la tienda de origen omitida («##»): el script queda como trabajo académico y solo se completa y ejecuta
+# con la licencia del proveedor (subproceso 3.2 del informe de SIPCO).
+BASE = "https://www.##.cl"
+BUSQUEDA = BASE + "/##-cl/buscar?Ntt={q}&page={p}"
 TERMINOS = ["perfil angulo acero", "angulo laminado", "angulo plegado", "perfil canal acero",
             "perfil costanera acero", "perfil cuadrado acero", "perfil rectangular acero",
             "tubo cuadrado acero", "tubo redondo acero", "pletina acero", "fierro redondo",
@@ -247,7 +249,7 @@ def desde_json_ld(html):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("--salida", default=str(Path(__file__).with_name("precios_sodimac.csv")))
+    ap.add_argument("--salida", default=str(Path(__file__).with_name("precios_origen.csv")))
     ap.add_argument("--paginas", type=int, default=MAX_PAGINAS, help="máx. páginas por término")
     ap.add_argument("--max-requests", type=int, default=MAX_REQUESTS, help="tope de requests por ejecución")
     ap.add_argument("--terminos", default=None,
@@ -262,6 +264,8 @@ def main(argv=None):
         ruta, n = reprocesar(args.reprocesar, salida)
         print(f"{n} filas reprocesadas -> {ruta}")
         return
+    if "##" in BASE:
+        sys.exit("Falta la URL de la tienda de origen («##»): solo se completa con la licencia de su proveedor.")
     terminos = elegir_terminos(args.terminos)
     estimado = min(len(terminos) * args.paginas, args.max_requests)
     print(f"Términos ({len(terminos)}): {', '.join(terminos)}")
@@ -275,7 +279,7 @@ def main(argv=None):
     try:
         r = s.get(BASE + "/robots.txt", timeout=20)
     except requests.RequestException as e:
-        sys.exit(f"No se pudo conectar a sodimac.cl: {e}")
+        sys.exit(f"No se pudo conectar a la tienda de origen: {e}")
     if r.status_code != 200:
         sys.exit(f"robots.txt respondió {r.status_code}; no se continúa. Inicio: {r.text[:200]!r}")
     robots = urllib.robotparser.RobotFileParser()

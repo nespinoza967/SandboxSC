@@ -47,3 +47,11 @@ El sitio publicado contiene:
 - `esperados.csv`: precio publicado y largo de cada producto, para verificar la lectura (D3).
 
 Para activarlo: **Settings → Pages → Source: GitHub Actions**.
+
+## Captura de origen (trabajo académico): `herramientas/scrapear_origen.py`
+
+El script con que se capturaron los precios base queda en el repositorio como trabajo académico funcional: respeta
+`robots.txt`, hace un request a la vez con pausas de 8 a 15 s y se detiene ante un bloqueo o captcha; lee datos
+estructurados (`__NEXT_DATA__` y JSON-LD) y clasifica y filtra los perfiles de acero (pruebas en `tests/`). La URL de
+la tienda de origen está reemplazada por `##`: sin ella el script no consulta nada. Solo se completa y se ejecuta con la
+licencia del proveedor, como cualquier tienda real (subproceso 3.2 del informe de SIPCO).

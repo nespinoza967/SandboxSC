@@ -120,3 +120,10 @@ def test_reprocesar(tmp_path):
     filas = list(csv.DictReader(sal.open(encoding="utf-8")))
     assert list(filas[0]) == s.CAMPOS
     assert (filas[0]["tipo"], filas[0]["espesor_mm"], filas[0]["precio_clp"]) == ("pletina", "5.0", "100")
+
+
+def test_sin_url_de_origen_no_consulta_nada(capsys):
+    import pytest
+    assert "##" in s.BASE
+    with pytest.raises(SystemExit, match="licencia"):
+        s.main(["--terminos", "1"])
