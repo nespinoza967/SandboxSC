@@ -1,14 +1,14 @@
-"""Pruebas de parseo/filtro con nombres reales (tests/muestra_sodimac.csv). Ejecutar:
-py -m pytest scripts/sodimac/tests"""
+"""Pruebas de parseo/filtro con nombres reales (tests/muestra_origen.csv). Ejecutar:
+python -m pytest tests"""
 import csv
 import json
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-import scrapear as s  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "herramientas"))
+import scrapear_origen as s  # noqa: E402
 
-MUESTRA = Path(__file__).with_name("muestra_sodimac.csv")
+MUESTRA = Path(__file__).with_name("muestra_origen.csv")
 
 
 def test_clasificar_angulo_laminado():

@@ -1,0 +1,11 @@
+{
+  "_nota": "Tiendas virtuales del Sandbox de SIPCO. Sus precios son simulados a partir de datos/precios_promedios_v.csv.",
+  "tiendas": [
+    {"codigo": "aceros-norte-v", "nombre": "Aceros del Norte V", "tipo_fuente": "HTML", "publica_con_iva": true,
+     "factor": 1.00, "variacion_pct": 4, "cobertura": 1.00},
+    {"codigo": "ferreteria-pampa-v", "nombre": "Ferretería Pampa V", "tipo_fuente": "API", "publica_con_iva": false,
+     "factor": 0.97, "variacion_pct": 5, "cobertura": 0.85},
+    {"codigo": "metales-desierto-v", "nombre": "Metales del Desierto V", "tipo_fuente": "ARCHIVO", "publica_con_iva": true,
+     "factor": 1.03, "variacion_pct": 3, "cobertura": 0.70}
+  ]
+}

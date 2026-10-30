@@ -1,0 +1,143 @@
+codigo,nombre,tipo,dimensiones,espesor_mm,largo_m,proceso,precio_base_clp,designacion_icha
+PPV-001,Ángulo Acero 20x20x2 mm 2 m,angulo,20x20x2,2.0,2.0,,1556,
+PPV-002,Ángulo Acero 30x30x2 mm 2 m,angulo,30x30x2,2.0,2.0,,3998,
+PPV-003,Ángulo Laminado Acero 20x20x3 mm 6 m,angulo,20x20x3,3.0,6.0,laminado,9990,L 20x20x3
+PPV-004,Ángulo Laminado Acero 25x25x3 mm 6 m,angulo,25x25x3,3.0,6.0,laminado,12090,L 25x25x3
+PPV-005,Ángulo Laminado Acero 25x25x5 mm 6 m,angulo,25x25x5,5.0,6.0,laminado,20990,L 25x25x5
+PPV-006,Ángulo Laminado Acero 30x30x3 mm 6 m,angulo,30x30x3,3.0,6.0,laminado,13990,L 30x30x3
+PPV-007,Ángulo Laminado Acero 30x30x5mm 6 m,angulo,30x30x5,5.0,6.0,laminado,23990,L 30x30x5
+PPV-008,Ángulo Laminado Acero 40x40x3mm 6 m,angulo,40x40x3,3.0,6.0,laminado,15990,L 40x40x3
+PPV-009,Ángulo Laminado Acero 40x40x4mm 6 m,angulo,40x40x4,4.0,6.0,laminado,24990,L 40x40x4
+PPV-010,Ángulo Laminado Acero 40x40x5mm 6 m,angulo,40x40x5,5.0,6.0,laminado,26021,L 40x40x5
+PPV-011,Ángulo Laminado Acero 50x50x3 mm 6 m,angulo,50x50x3,3.0,6.0,laminado,20990,L 50x50x3
+PPV-012,Ángulo Laminado Acero 50x50x4mm 6 m,angulo,50x50x4,4.0,6.0,laminado,29490,L 50x50x4
+PPV-013,Ángulo Laminado Acero 50x50x5 mm 6 m,angulo,50x50x5,5.0,6.0,laminado,34975,L 50x50x5
+PPV-014,Ángulo Laminado Acero 65x65x5mm 6 m,angulo,65x65x5,5.0,6.0,laminado,47006,L 65x65x5
+PPV-015,Ángulo Plegado Acero 20x20x2 mm 6 m,angulo,20x20x2,2.0,6.0,plegado,3990,
+PPV-016,Ángulo Plegado Acero 20x20x3 mm 6 m,angulo,20x20x3,3.0,6.0,plegado,5990,L 20x20x3
+PPV-017,Ángulo Plegado Acero 25x25x2 mm 6 m,angulo,25x25x2,2.0,6.0,plegado,4550,
+PPV-018,Ángulo Plegado Acero 25x25x3 mm 6 m,angulo,25x25x3,3.0,6.0,plegado,7190,L 25x25x3
+PPV-019,Ángulo Plegado Acero 30x30x2 mm 6 m,angulo,30x30x2,2.0,6.0,plegado,5550,
+PPV-020,Ángulo Plegado Acero 30x30x3 mm 6 m,angulo,30x30x3,3.0,6.0,plegado,9690,L 30x30x3
+PPV-021,Ángulo Plegado Acero 40x40x2 mm 6 m,angulo,40x40x2,2.0,6.0,plegado,8900,
+PPV-022,Ángulo Plegado Acero 40x40x3 mm 6 m,angulo,40x40x3,3.0,6.0,plegado,16090,L 40x40x3
+PPV-023,Ángulo Plegado Acero 50x50x2mm 6 m,angulo,50x50x2,2.0,6.0,plegado,23090,
+PPV-024,Ángulo Plegado Acero 50x50x3 mm 6 m,angulo,50x50x3,3.0,6.0,plegado,21190,L 50x50x3
+PPV-025,Fierro A-63 10x10 mm 6 m,barra_a63,10,,6.0,,3990,
+PPV-026,Fierro A-63 12x12 mm 6 m,barra_a63,12,,6.0,,5742,
+PPV-027,Fierro A-63 8x8 mm 6 m,barra_a63,8,,6.0,,2554,
+PPV-028,Fierro Liso Cuadrado Acero 10x10.5 mm 6 m,barra_cuadrada,10x10.5,,6.0,,7990,
+PPV-029,Fierro Liso Cuadrado Acero 12x12 mm 6 m,barra_cuadrada,12,,6.0,,11990,
+PPV-030,Fierro Liso Redondo Acero 10x10 mm 6 m,barra_redonda,10,,6.0,,6890,
+PPV-031,Fierro Liso Redondo Acero 12x12 mm 6 m,barra_redonda,12,,6.0,,8061,
+PPV-032,Fierro Liso Redondo Acero 16x16 mm 6 m,barra_redonda,16,,6.0,,18690,
+PPV-033,Fierro Liso Redondo Acero 8x8 mm 6 m,barra_redonda,8,,6.0,,3590,
+PPV-034,Fierro redondo Acero 18x18 mm 6 m,barra_redonda,18,,6.0,,24290,
+PPV-035,Fierro redondo Acero 19x19 mm 6 m,barra_redonda,19,,6.0,,30990,
+PPV-036,Fierro redondo Acero 22x22 mm 6 m,barra_redonda,22,,6.0,,36990,
+PPV-037,Canal Acero 100x50x2mm 6 m,canal,100x50x2,2.0,6.0,,22590,
+PPV-038,Canal Acero 100x50x3mm 6 m,canal,100x50x3,3.0,6.0,,30190,
+PPV-039,Canal Acero 125x50x2mm 6 m,canal,125x50x2,2.0,6.0,,22090,
+PPV-040,Canal Acero 125x50x3mm 6 m,canal,125x50x3,3.0,6.0,,32690,
+PPV-041,Canal Acero 150x50x2mm 6 m,canal,150x50x2,2.0,6.0,,25550,
+PPV-042,Canal Acero 150x50x3mm 6 m,canal,150x50x3,3.0,6.0,,42090,
+PPV-043,Canal Acero 150x50x4mm 6 m,canal,150x50x4,4.0,6.0,,50990,
+PPV-044,Canal Acero 150x75x3mm 6 m,canal,150x75x3,3.0,6.0,,46990,
+PPV-045,Canal Acero 200x50x2mm 6 m,canal,200x50x2,2.0,6.0,,40890,C 200x50x4.6
+PPV-046,Canal Acero 200x50x3mm 6 m,canal,200x50x3,3.0,6.0,,50590,C 200x50x6.8
+PPV-047,Canal Acero 200x50x4mm 6 m,canal,200x50x4,4.0,6.0,,60990,C 200x50x9
+PPV-048,Canal Acero 50x25x2mm 6 m,canal,50x25x2,2.0,6.0,,9990,
+PPV-049,Canal Acero 50x25x3mm 6 m,canal,50x25x3,3.0,6.0,,17890,
+PPV-050,Canal Acero 80x40x2mm 6 m,canal,80x40x2,2.0,6.0,,17990,
+PPV-051,Canal Acero 80x40x3mm 6 m,canal,80x40x3,3.0,6.0,,23890,
+PPV-052,Costanera Acero 100x50x15x2 mm 6 m,costanera,100x50x15x2,2.0,6.0,,22890,CA 100x50x3.4
+PPV-053,Costanera Acero 100x50x15x3 mm 6 m,costanera,100x50x15x3,3.0,6.0,,33390,CA 100x50x4.9
+PPV-054,Costanera Acero 125x50x15x2 mm 6 m,costanera,125x50x15x2,2.0,6.0,,24490,CA 125x50x3.8
+PPV-055,Costanera Acero 125x50x15x3 mm 6 m,costanera,125x50x15x3,3.0,6.0,,37990,CA 125x50x5.5
+PPV-056,Costanera Acero 150x50x15x2 mm 6 m,costanera,150x50x15x2,2.0,6.0,,36790,CA 150x50x4.2
+PPV-057,Costanera Acero 150x50x15x3 mm 6 m,costanera,150x50x15x3,3.0,6.0,,39590,CA 150x50x6.1
+PPV-058,Costanera Acero 200x50x15x3 mm 6 m,costanera,200x50x15x3,3.0,6.0,,48990,CA 200x50x7.2
+PPV-059,Costanera Acero 80x40x15x2 mm 6 m,costanera,80x40x15x2,2.0,6.0,,20690,CA 80x40x2.7
+PPV-060,Costanera Acero 80x40x15x3 mm 6 m,costanera,80x40x15x3,3.0,6.0,,26450,CA 80x40x3.9
+PPV-061,Cuadrado Acero 100x100x2 mm 3 m,cuadrado,100x100x2,2.0,3.0,,25046,[] 100x100x6
+PPV-062,Cuadrado Acero 100x100x2 mm 6 m,cuadrado,100x100x2,2.0,6.0,,42450,[] 100x100x6
+PPV-063,Cuadrado Acero 100x100x3 mm 6 m,cuadrado,100x100x3,3.0,6.0,,62850,[] 100x100x8.9
+PPV-064,Cuadrado Acero 100x100x4 mm 6 m,cuadrado,100x100x4,4.0,6.0,,89390,[] 100x100x11.6
+PPV-065,"Cuadrado Acero 15x15x1,5 mm 6 m",cuadrado,15x15x1.5,1.5,6.0,,4890,[] 15x15x0.6
+PPV-066,"Cuadrado Acero 20x20x1,5 mm 6 m",cuadrado,20x20x1.5,1.5,6.0,,5550,[] 20x20x0.8
+PPV-067,Cuadrado Acero 20x20x1.5 mm 2 m,cuadrado,20x20x1.5,1.5,2.0,,2165,[] 20x20x0.8
+PPV-068,Cuadrado Acero 20x20x2 mm 2 m,cuadrado,20x20x2,2.0,2.0,,2609,[] 20x20x1
+PPV-069,Cuadrado Acero 20x20x2 mm 6 m,cuadrado,20x20x2,2.0,6.0,,6690,[] 20x20x1
+PPV-070,Cuadrado Acero 25x25x15 mm 6 m,cuadrado,25x25x1.5,1.5,6.0,,6990,[] 25x25x1
+PPV-071,Cuadrado Acero 25x25x2 mm 6 m,cuadrado,25x25x2,2.0,6.0,,10490,[] 25x25x1.3
+PPV-072,"Cuadrado Acero 30x30x1,5 mm 6 m",cuadrado,30x30x1.5,1.5,6.0,,10490,[] 30x30x1.3
+PPV-073,Cuadrado Acero 30x30x2 mm 2 m,cuadrado,30x30x2,2.0,2.0,,3998,[] 30x30x1.7
+PPV-074,Cuadrado Acero 30x30x2 mm 6 m,cuadrado,30x30x2,2.0,6.0,,10250,[] 30x30x1.7
+PPV-075,"Cuadrado Acero 40x40x1,5 mm 6 m",cuadrado,40x40x1.5,1.5,6.0,,12990,[] 40x40x1.8
+PPV-076,Cuadrado Acero 40x40x1.5 mm 3 m,cuadrado,40x40x1.5,1.5,3.0,,7664,[] 40x40x1.8
+PPV-077,Cuadrado Acero 40x40x2 mm 3 m,cuadrado,40x40x2,2.0,3.0,,8703,[] 40x40x2.3
+PPV-078,Cuadrado Acero 40x40x2 mm 6 m,cuadrado,40x40x2,2.0,6.0,,14750,[] 40x40x2.3
+PPV-079,Cuadrado Acero 40x40x3 mm 6 m,cuadrado,40x40x3,3.0,6.0,,24090,[] 40x40x3.2
+PPV-080,"Cuadrado Acero 50x50x1,5 mm 6 m",cuadrado,50x50x1.5,1.5,6.0,,16390,[] 50x50x2.2
+PPV-081,Cuadrado Acero 50x50x2 mm 3 m,cuadrado,50x50x2,2.0,3.0,,11204,[] 50x50x2.9
+PPV-082,Cuadrado Acero 50x50x2 mm 6 m,cuadrado,50x50x2,2.0,6.0,,18990,[] 50x50x2.9
+PPV-083,Cuadrado Acero 50x50x3 mm 6 m,cuadrado,50x50x3,3.0,6.0,,29990,[] 50x50x4.2
+PPV-084,Cuadrado Acero 75x75x2 mm 3 m,cuadrado,75x75x2,2.0,3.0,,16632,[] 75x75x4.5
+PPV-085,Cuadrado Acero 75x75x2 mm 6 m,cuadrado,75x75x2,2.0,6.0,,28190,[] 75x75x4.5
+PPV-086,Cuadrado Acero 75x75x3 mm 6 m,cuadrado,75x75x3,3.0,6.0,,41450,[] 75x75x6.5
+PPV-087,Plancha Acero Galvanizado 0.25x2 m 0.30 mm Galvanizado,plancha,2000x250,0.3,2.0,,4790,
+PPV-088,"Plancha negra laminado caliente 3,0 x 1,0mt x 2,5mm",plancha,3000x1000,2.5,3.0,laminado,119990,
+PPV-089,"Plancha negra laminado caliente 3,0 x 1,0mt x 4,0mm",plancha,3000x1000,4.0,3.0,laminado,177890,
+PPV-090,"Plancha negra laminado frio 2,0 x 1,0mt x 1,0mm",plancha,2000x1000,1.0,2.0,laminado,33390,
+PPV-091,"Plancha negra laminado frio 2,0 x 1,0mt x 1,5mm",plancha,2000x1000,1.5,2.0,laminado,49790,
+PPV-092,"Plancha negra laminado frio 3,0 x 1,0mt x 0,5mm",plancha,3000x1000,0.5,3.0,laminado,26190,
+PPV-093,"Plancha negra laminado frio 3,0 x 1,0mt x 1,0mm",plancha,3000x1000,1.0,3.0,laminado,43590,
+PPV-094,"Plancha negra laminado frio 3,0 x 1,0mt x 1,2mm",plancha,3000x1000,1.2,3.0,laminado,59790,
+PPV-095,"Plancha negra laminado frio 3,0 x 1,0mt x 1,5mm",plancha,3000x1000,1.5,3.0,laminado,65390,
+PPV-096,Fierro Barra Plana Laminada en Caliente Acero 3x16 mm 6 m,pletina,3x16,3.0,6.0,laminado,2707,
+PPV-097,Fierro Barra Plana Laminada en Caliente Acero 3x20 mm 6 m,pletina,3x20,3.0,6.0,laminado,3561,
+PPV-098,Fierro Barra Plana Laminada en Caliente Acero 3x25 mm 6 m,pletina,3x25,3.0,6.0,laminado,4490,
+PPV-099,Fierro Barra Plana Laminada en Caliente Acero 3x32 mm 6 m,pletina,3x32,3.0,6.0,laminado,6376,
+PPV-100,Fierro Barra Plana Laminada en Caliente Acero 3x38 mm 6 m,pletina,3x38,3.0,6.0,laminado,6780,
+PPV-101,Fierro Barra Plana Laminada en Caliente Acero 3x50 mm 6 m,pletina,3x50,3.0,6.0,laminado,9249,
+PPV-102,Fierro Barra Plana Laminada en Caliente Acero 5x25 mm 6 m,pletina,5x25,5.0,6.0,laminado,6735,
+PPV-103,Fierro Plano Acero 5x100 mm 6 m,pletina,5x100,5.0,6.0,,32104,
+PPV-104,Fierro Plano Acero 5x12 mm 6 m,pletina,5x12,5.0,6.0,,7490,
+PPV-105,Fierro Plano Acero 5x63 mm 6 m,pletina,5x63,5.0,6.0,,28990,
+PPV-106,Fierro Plano Acero 5x75 mm 6 m,pletina,5x75,5.0,6.0,,40990,
+PPV-107,Fierro plano Acero 3x12 mm 6 m,pletina,3x12,3.0,6.0,,2110,
+PPV-108,Fierro plano Acero 5x20 mm 6 m,pletina,5x20,5.0,6.0,,5478,
+PPV-109,Fierro plano Acero 5x32 mm 6 m,pletina,5x32,5.0,6.0,,9249,
+PPV-110,Fierro plano Acero 5x38 mm 6 m,pletina,5x38,5.0,6.0,,10686,
+PPV-111,Fierro plano Acero 5x50 mm 6 m,pletina,5x50,5.0,6.0,,13560,
+PPV-112,Rectangular Acero 100x50x2 mm 6 m,rectangular,100x50x2,2.0,6.0,,32190,[] 100x50x4.5
+PPV-113,Rectangular Acero 100x50x3 mm 6 m,rectangular,100x50x3,3.0,6.0,,50290,[] 100x50x6.5
+PPV-114,Rectangular Acero 150x50x2 mm 6 m,rectangular,150x50x2,2.0,6.0,,55790,[] 150x50x6
+PPV-115,Rectangular Acero 150x50x3 mm 6 m,rectangular,150x50x3,3.0,6.0,,68390,[] 150x50x8.9
+PPV-116,"Rectangular Acero 25x15x1,5 mm 6 m",rectangular,25x15x1.5,1.5,6.0,,6700,[] 25x15x0.8
+PPV-117,"Rectangular Acero 30x20x1,5 mm 2 m",rectangular,30x20x1.5,1.5,2.0,,2789,[] 30x20x1
+PPV-118,Rectangular Acero 30x20x1.5 mm 6 m,rectangular,30x20x1.5,1.5,6.0,,7150,[] 30x20x1
+PPV-119,Rectangular Acero 30x20x2 mm 2 m,rectangular,30x20x2,2.0,2.0,,3623,[] 30x20x1.3
+PPV-120,Rectangular Acero 30x20x2 mm 6 m,rectangular,30x20x2,2.0,6.0,,9290,[] 30x20x1.3
+PPV-121,"Rectangular Acero 40x20x1,5 mm 6 m",rectangular,40x20x1.5,1.5,6.0,,8690,[] 40x20x1.3
+PPV-122,Rectangular Acero 40x20x2 mm 3 m,rectangular,40x20x2,2.0,3.0,,6284,[] 40x20x1.7
+PPV-123,Rectangular Acero 40x20x2 mm 6 m,rectangular,40x20x2,2.0,6.0,,10650,[] 40x20x1.7
+PPV-124,"Rectangular Acero 40x30x1,5 mm 6 m",rectangular,40x30x1.5,1.5,6.0,,11590,[] 40x30x1.5
+PPV-125,Rectangular Acero 40x30x2 mm 6 m,rectangular,40x30x2,2.0,6.0,,15190,[] 40x30x2
+PPV-126,"Rectangular Acero 50x20x1,5 mm 6 m",rectangular,50x20x1.5,1.5,6.0,,10350,[] 50x20x1.5
+PPV-127,Rectangular Acero 50x20x2 mm 6 m,rectangular,50x20x2,2.0,6.0,,12650,[] 50x20x2
+PPV-128,"Rectangular Acero 50x30x1,5 mm 6 m",rectangular,50x30x1.5,1.5,6.0,,18390,[] 50x30x1.8
+PPV-129,Rectangular Acero 50x30x2 mm 6 m,rectangular,50x30x2,2.0,6.0,,14690,[] 50x30x2.3
+PPV-130,Rectangular Acero 50x30x3 mm 6 m,rectangular,50x30x3,3.0,6.0,,25190,[] 50x30x3.2
+PPV-131,Rectangular Acero 60x40x2 mm 6 m,rectangular,60x40x2,2.0,6.0,,24790,[] 60x40x2.9
+PPV-132,Rectangular Acero 70x30x2 mm 6 m,rectangular,70x30x2,2.0,6.0,,19790,[] 70x30x2.9
+PPV-133,Rectangular Acero 80x40x2 mm 6 m,rectangular,80x40x2,2.0,6.0,,25690,[] 80x40x3.5
+PPV-134,Rectangular Acero 80x40x3 mm 6 m,rectangular,80x40x3,3.0,6.0,,35990,[] 80x40x5.1
+PPV-135,"Tubular Redondo Acero 1 1/2"" 1,5 mm 6 m",tubo_redondo,"1 1/2""",1.5,6.0,,10990,
+PPV-136,"Tubular Redondo Acero 1 1/2"" 2 mm 6 m",tubo_redondo,"1 1/2""",2.0,6.0,,12290,
+PPV-137,"Tubular Redondo Acero 1 1/4"" 1,5 mm 6 m",tubo_redondo,"1 1/4""",1.5,6.0,,9290,
+PPV-138,"Tubular Redondo Acero 1 1/4"" 2 mm 6 m",tubo_redondo,"1 1/4""",2.0,6.0,,11590,
+PPV-139,"Tubular Redondo Acero 1"" 2 mm 6 m",tubo_redondo,"1""",2.0,6.0,,7690,
+PPV-140,"Tubular Redondo Acero 2"" 1,5 mm 6 m",tubo_redondo,"2""",1.5,6.0,,16790,
+PPV-141,"Tubular Redondo Acero 2"" 2 mm 6 m",tubo_redondo,"2""",2.0,6.0,,21990,
+PPV-142,"Tubular Redondo Acero 3"" 2 mm 6 m",tubo_redondo,"3""",2.0,6.0,,28590,

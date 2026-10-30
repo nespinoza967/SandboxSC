@@ -1,0 +1,50 @@
+# Publica el Sandbox de precios en GitHub Pages: cada domingo a las 12:00 UTC con los precios de la semana que empieza
+# el lunes (SIPCO los lee el lunes a las 00:00, HU-19) y a mano desde «Actions» para generar una semana nueva.
+name: Publicar Sandbox de precios
+
+on:
+  schedule:
+    - cron: "0 12 * * 0"
+  workflow_dispatch:
+    inputs:
+      semana:
+        description: "Semana ISO (ej. 2026-W45). Vacío = la del próximo lunes"
+        required: false
+      caida:
+        description: "Tiendas que no publican (códigos separados por coma), para probar lecturas parciales"
+        required: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Pruebas
+        run: |
+          pip install -r requirements.txt pytest
+          python -m pytest -q tests
+      - name: Generar tiendas virtuales
+        env:
+          SEMANA: ${{ inputs.semana }}
+          CAIDA: ${{ inputs.caida }}
+        run: python generar.py --salida sitio ${SEMANA:+--semana "$SEMANA"} --caida "$CAIDA"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: sitio
+      - id: despliegue
+        uses: actions/deploy-pages@v4
