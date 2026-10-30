@@ -1,54 +1,57 @@
-# Scraper de precios Sodimac (perfiles de acero)
+# Sandbox de precios SIPCO
 
-Script independiente que busca perfiles y barras de acero en sodimac.cl (ángulos laminados y
-plegados, canales, costaneras, perfiles cuadrados/rectangulares, pletinas, fierro redondo y
-cuadrado, barra lisa, tubos, planchas, vigas, perfil T) y **agrega** cada ejecución a un CSV con:
+Tiendas **virtuales** con precios **simulados** que SIPCO lee una vez por semana (HU-19) para comparar el mercado con
+su valor interno por kilo (HU-08) y mostrar los precios por tienda de cada perfil (HU-20). Se publica en GitHub Pages.
 
-`fecha, termino, nombre, sku, precio_clp, url, tipo, dimensiones, espesor_mm, largo_m, proceso, observacion`
+En la versión 1.0 SIPCO no lee sitios de terceros: una tienda real solo se agrega con la licencia de su proveedor
+(subproceso 3.2 del informe; Ley 21.459). Por eso las tiendas de aquí son ficticias.
 
-- `tipo`: angulo/canal/costanera/cuadrado/rectangular/pletina/tubo_redondo/barra_redonda/
-  barra_cuadrada/barra_a63/plancha/viga/perfil_t.
-- `dimensiones`: en mm. Pletina (fierro plano / barra plana) `3x50` con `espesor_mm` = 3;
-  tubo redondo = diámetro nominal en pulgadas (`1 1/4"`); barras macizas = diámetro o lado
-  (`12`, sin espesor); planchas `3000x1000` (largo x ancho) con `largo_m` = 3.0.
-- `proceso`: laminado/plegado si el nombre lo indica.
-- `observacion`: avisos de corrección automática, p. ej. `25x25x15` (espesor implausible para
-  un perfil de 25) se interpreta como 1,5 mm.
+## Datos base: `datos/precios_promedios_v.csv`
 
-Si el CSV existente tiene otras columnas, se escribe en `<nombre>_v3.csv` para no mezclar formatos.
+142 productos de acero (ángulos, canales, costaneras, perfiles cuadrados y rectangulares, pletinas, barras, tubos y
+planchas) con un precio base en CLP con IVA. Por razones académicas, la base se armó con precios publicados reales
+capturados el 29-10-2026 (`herramientas/scrapear_origen.py`), sin el SKU ni la URL de la tienda de origen. La «v» es
+de virtual: desde ahí, todos los precios del Sandbox son simulados.
 
-## Uso (Windows, Git Bash)
+`designacion_icha` dice a qué perfil del catálogo ICHA corresponde cada producto (78 de 142), calculado por sección y
+medidas. SIPCO no asocia por nombre: este dato solo sirve para cargar la tabla inicial de «Productos por tienda», que
+después mantiene Ventas.
+
+## Tiendas virtuales: `datos/tiendas.json`
+
+| Tienda | Fuente | IVA | Precio | Vende |
+|---|---|---|---|---|
+| Aceros del Norte V | HTML (`index.html`) | con IVA | base ± 4 % | todo |
+| Ferretería Pampa V | API (`api/precios.json`) | sin IVA (neto) | base × 0,97 ± 5 % | ~85 % |
+| Metales del Desierto V | Archivo (`precios.csv`) | con IVA | base × 1,03 ± 3 % | ~70 % |
+
+La variación semanal sale de una semilla (semana, tienda, producto): la misma semana da siempre los mismos precios,
+así que SIPCO se prueba contra precios conocidos (`esperados.csv`, indicador D3). Cada tienda tiene su propio SKU.
+
+## Generar y publicar
 
 ```bash
-py -m pip install -r scripts/sodimac/requirements.txt
-py scripts/sodimac/scrapear.py                      # todos los términos, hasta 5 páginas c/u
-py scripts/sodimac/scrapear.py --terminos 2         # solo los 2 primeros términos
-py scripts/sodimac/scrapear.py --terminos "pletina acero,barra lisa" --paginas 2
-# re-parsear un CSV ya descargado (sin red) a un archivo nuevo:
-py scripts/sodimac/scrapear.py --reprocesar scripts/sodimac/precios_sodimac_v2.csv --salida precios_sodimac_v3.csv
+python generar.py --semana 2026-W45 --salida sitio          # una semana concreta
+python generar.py --caida ferreteria-pampa-v                # esa tienda no publica: lectura parcial en SIPCO
+python -m pytest tests
 ```
 
-`--reprocesar` no hace ningún request: vuelve a clasificar la columna `nombre` con las reglas
-actuales y conserva fecha, término, SKU, precio y URL. Sin `--salida` escribe `<csv>_reprocesado.csv`.
+El workflow `.github/workflows/publicar.yml` publica en GitHub Pages **cada domingo a las 12:00 UTC** los precios de la
+semana que empieza el lunes. También se corre a mano desde **Actions → Publicar Sandbox de precios → Run workflow**
+(con semana y tiendas caídas opcionales): es el botón «Actualizar» del Sandbox. SIPCO no tiene botón manual (HU-19).
 
-Al partir imprime los términos y una duración estimada; luego el avance por página.
-Ejecución completa: 17 términos × hasta 5 páginas, tope 80 requests → máx. ~11–20 min
-(normalmente menos, porque corta cuando una página no trae productos nuevos).
+El sitio publicado contiene:
 
-## Cómo funciona
+- `tiendas.json`: semana, tiendas, tipo de fuente, IVA y ruta de su fuente.
+- `productos.csv`: SKU de cada tienda con su perfil ICHA, para `cargar_tiendas_sandbox` en SIPCO.
+- `esperados.csv`: precio publicado y largo de cada producto, para verificar la lectura (D3).
 
-- Lee y respeta `robots.txt`; si no se puede leer, no continúa.
-- Mínimamente intrusivo: un request a la vez, pausa aleatoria de 8–15 s, tope de 80 requests
-  por ejecución (`--max-requests`), y se detiene de inmediato ante cualquier error, 403/429,
-  captcha o Akamai.
-- Paginación con `&page=N`: avanza mientras haya productos nuevos, hasta `--paginas` (5) o el
-  total de páginas informado en `__NEXT_DATA__` (`pageProps.pagination`), si existe.
-- Deduplica por SKU dentro de la ejecución.
-- Filtra solo acero: descarta aluminio, madera/pino, ángulos decorativos (blanco/negro/café),
-  accesorios y productos no relacionados. `--sin-filtro` lo desactiva. El log muestra cuántos
-  se excluyeron.
-- En desarrollo usar `--cache` (guarda el HTML en `scripts/sodimac/.cache/`).
-- Pruebas de parseo/filtro (con nombres reales de una ejecución): `py -m pytest scripts/sodimac/tests`
+Para activarlo: **Settings → Pages → Source: GitHub Actions**.
 
-> Nota: la paginación y los nuevos términos no se han probado contra el sitio real (el entorno
-> donde se escribió no tiene acceso a sodimac.cl).
+## Captura de origen (trabajo académico): `herramientas/scrapear_origen.py`
+
+El script con que se capturaron los precios base queda en el repositorio como trabajo académico funcional: respeta
+`robots.txt`, hace un request a la vez con pausas de 8 a 15 s y se detiene ante un bloqueo o captcha; lee datos
+estructurados (`__NEXT_DATA__` y JSON-LD) y clasifica y filtra los perfiles de acero (pruebas en `tests/`). La URL de
+la tienda de origen está reemplazada por `##`: sin ella el script no consulta nada. Solo se completa y se ejecuta con la
+licencia del proveedor, como cualquier tienda real (subproceso 3.2 del informe de SIPCO).

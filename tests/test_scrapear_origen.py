@@ -1,14 +1,14 @@
-"""Pruebas de parseo/filtro con nombres reales (tests/muestra_sodimac.csv). Ejecutar:
-py -m pytest scripts/sodimac/tests"""
+"""Pruebas de parseo/filtro con nombres reales (tests/muestra_origen.csv). Ejecutar:
+python -m pytest tests"""
 import csv
 import json
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-import scrapear as s  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "herramientas"))
+import scrapear_origen as s  # noqa: E402
 
-MUESTRA = Path(__file__).with_name("muestra_sodimac.csv")
+MUESTRA = Path(__file__).with_name("muestra_origen.csv")
 
 
 def test_clasificar_angulo_laminado():
@@ -120,3 +120,10 @@ def test_reprocesar(tmp_path):
     filas = list(csv.DictReader(sal.open(encoding="utf-8")))
     assert list(filas[0]) == s.CAMPOS
     assert (filas[0]["tipo"], filas[0]["espesor_mm"], filas[0]["precio_clp"]) == ("pletina", "5.0", "100")
+
+
+def test_sin_url_de_origen_no_consulta_nada(capsys):
+    import pytest
+    assert "##" in s.BASE
+    with pytest.raises(SystemExit, match="licencia"):
+        s.main(["--terminos", "1"])
